@@ -3,6 +3,7 @@
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 import { useUser } from "@clerk/nextjs"
 import { useRouter } from "next/navigation";
+import { BreadCrums } from "./BreadCrums";
 
 export const Header = () => {
     const { user } = useUser();
@@ -22,6 +23,7 @@ export const Header = () => {
         )}
 
         {/* Breadcrums */}
+        <BreadCrums />
 
 
         <div>
