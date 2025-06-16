@@ -23,6 +23,7 @@ export const BreadCrums = () => {
                     if (!segment) return null;
                     const href = `/${segments.slice(0, index+1).join("/")}`
                     const isLast = index === segments.length -1;
+                    const isDocSegment = segment.toLowerCase() === "doc";
 
                     return <Fragment key={segment}> 
                             <BreadcrumbSeparator />
@@ -30,6 +31,8 @@ export const BreadCrums = () => {
                             
                                 {isLast ? (
                                     <BreadcrumbPage>{segment}</BreadcrumbPage>
+                                ) :  isDocSegment ? (
+                                <span className="text-muted-foreground">{segment}</span>
                                 ) : (
                                     <BreadcrumbLink href={href}>{segment}</BreadcrumbLink>
                                 )}
