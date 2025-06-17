@@ -10,6 +10,8 @@ import { Editor } from "./Editor";
 import { useOwner } from "@/lib/useOwner";
 import { DeleteDocument } from "./DeleteDocument";
 import { InviteUser } from "./InviteUser";
+import { ManageUser } from "./ManageUser";
+import { Avatars } from "./Avatars";
 
 export const Document = ({ id }: {id: string}) => {
     const [ data, loading, error ] = useDocumentData(doc(db, "documents", id));
@@ -47,7 +49,7 @@ export const Document = ({ id }: {id: string}) => {
                 </Button>
 
                 {/* IF */}
-
+                {/* isUser && inviteUser and Delete Doc */}
                 {isOwner && (
                     <>
                         {/* InviteUser */}
@@ -56,13 +58,15 @@ export const Document = ({ id }: {id: string}) => {
                         <DeleteDocument />
                     </>
                 )}
-                {/* isUser && inviteUser and Delete Doc */}
             </form>
         </div>
 
-        <div>
-            {/* ManageUsers */}
+        <div className="flex max-w-6xl mx-auto justify-between items-center mb-5"> 
+            {/* ManageUser */}
+            <ManageUser />
+
             {/* Avatar */}
+            <Avatars/>
         </div>
         
         <hr className="pb-10"/>

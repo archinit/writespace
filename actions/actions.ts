@@ -102,3 +102,27 @@ export async function inviteUserToDocument(roomId: string, email: string)  {
     }
     
 }
+
+export async function removeUserFromDocument(roomId: string, email: string) : Promise<{ success: boolean }> {
+    const { userId } = await auth();
+
+    if (!userId) {
+        return { success: false };
+    }
+    console.log("removeUserFromDocument", roomId, email);
+    
+    try {
+       await adminDB
+        .collection("users")
+        .doc(email)
+        .collection("rooms")
+        .doc(roomId)
+        .delete()
+        
+       return {success: true} 
+    } catch (error) {
+        console.error(error);
+        return {success: false}
+        
+    }
+}
