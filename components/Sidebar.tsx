@@ -97,7 +97,7 @@ export const Sidebar = () => {
                     </div>
                 )
             }   
-            </div>
+            
 
             {/* share with me */}
             <div>
@@ -112,6 +112,8 @@ export const Sidebar = () => {
                     </div>
                 )}
             </div>
+
+        </div>    
 
             {/* Lists */}
 
