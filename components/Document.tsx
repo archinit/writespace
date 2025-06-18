@@ -14,7 +14,7 @@ import { ManageUser } from "./ManageUser";
 import { Avatars } from "./Avatars";
 
 export const Document = ({ id }: {id: string}) => {
-    const [ data, loading, error ] = useDocumentData(doc(db, "documents", id));
+    const [ data ] = useDocumentData(doc(db, "documents", id));
     const [ input, setInput ] = useState("");
     const [ isUpdating, startTransition ] = useTransition();
     const isOwner = useOwner();
