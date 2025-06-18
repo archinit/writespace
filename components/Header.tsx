@@ -14,11 +14,15 @@ export const Header = () => {
 
 
     return <div className="flex items-center justify-between p-6">
-        {user && (
+        {user ? (
             <h1 onClick={ navigateHome } className=" cursor-pointer text-2xl">
                 {user?.firstName}
                 {`'s`} Space
                 {}
+            </h1>
+        ) : (
+            <h1 className="text-2xl">
+                WriteSpace
             </h1>
         )}
 
