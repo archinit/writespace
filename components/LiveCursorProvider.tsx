@@ -5,8 +5,8 @@ import { PointerEvent } from "react";
 import { FollowPointer } from "./FollowPointer";
 
 export const LiveCursorProvider = ( { children }: { children: React.ReactNode} ) => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [ myPresence, updateMyPresence ] = useMyPresence();
+    
+    const [, updateMyPresence ] = useMyPresence();
     const others = useOthers();
 
 
